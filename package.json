@@ -1,0 +1,102 @@
+{
+  "name": "g2plot-vue",
+  "version": "1.0.1",
+  "description": "A ant design charts vue3",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "private": false,
+  "files": [
+    "lib",
+    "es",
+    "*.d.ts"
+  ],
+  "directories": {
+    "lib": "lib",
+    "es": "es",
+    "test": "test"
+  },
+  "homepage": "https://github.com/zhaohongbo910/ant-design-charts-vue.git#README",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhaohongbo910/ant-design-charts-vue.git"
+  },
+  "keywords": [
+    "ant",
+    "desigin",
+    "g2plot",
+    "g2",
+    "vue3",
+    "vue",
+    "charts"
+  ],
+  "scripts": {
+    "lint": "npx eslint . --ext=.ts,.tsx,.js --fix",
+    "cre": "node ./script/create.js",
+    "lib": "npx babel ./src -d lib --extensions .ts,.tsx --delete-dir-on-start",
+    "lib.ts": "npx tsc --declarationDir ./lib",
+    "es": "npx babel ./src -d es --extensions .ts,.tsx --delete-dir-on-start",
+    "es.ts": "npx tsc --declarationDir ./es",
+    "build:es": "run-s es es.ts lint",
+    "build:lib": "run-s lib lib.ts lint"
+  },
+  "lint-staged": {
+    "*.{vue,js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "*.{md,json}": [
+      "prettier --write"
+    ]
+  },
+  "publishConfig": {},
+  "author": "zhaohongbo",
+  "license": "MIT",
+  "dependencies": {
+    "@antv/g2plot": "^2.3.15",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/eslint": "^7.2.7",
+    "@types/lodash": "^4.14.162",
+    "@types/node": "^14.14.34",
+    "@typescript-eslint/eslint-plugin": "^4.6.0",
+    "@typescript-eslint/parser": "^4.6.0",
+    "@vue/babel-preset-app": "^4.5.8",
+    "@vue/composition-api": "^1.0.0-rc.2",
+    "@vue/test-utils": "^2.0.0-beta.7",
+    "babel-eslint": "^10.1.0",
+    "canvas": "^2.9.3",
+    "chalk": "^4.1.0",
+    "core-js": "^3.9.1",
+    "cross-env": "^7.0.2",
+    "decamelize": "^5.0.0",
+    "ejs": "^3.1.6",
+    "escodegen": "^2.0.0",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-standard": "^5.0.0",
+    "eslint-plugin-vue": "^7.7.0",
+    "esprima": "^4.0.1",
+    "estraverse": "^5.2.0",
+    "jest": "^26.6.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "remark": "^13.0.0",
+    "standard": "^16.0.3",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3",
+    "vue": "^3.0.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10"
+  },
+  "peerDependencies": {
+    "@antv/g2plot": "^2.3.15",
+    "@vue/composition-api": "^1.0.0-rc.2",
+    "vue": "^2.0.0 || >=3.0.0-rc.0"
+  }
+}
